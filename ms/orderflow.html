@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>订单流程</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/dropload.css">
+    
+</head>
+<body>
+
+    <header class="ms_header">
+        <a href="javascript:history.back();" class="ms_ico_l"><i class="iconfont">&#xe601;</i></a>
+        <h3>订单流程</h3>
+    </header>
+    <div class="ms_bg_c02 ms_bgbase"></div>
+    <section class="ms_body ms_bt38 inner">
+        <div class="ms_content01 ">
+            <div class="ms_circle">
+                <img src="images/index/index_dyj.png" class="ms_mar_l15">
+            </div>
+            <div class="ms_timebox">
+                <ul class="ms_itemul">
+                    <li>
+                        <div class="ms_itemimg">2016-5-1  10:30</div>
+                        <div class="ms_itembox ms_pad_l120">
+                            <div class="ms_itemtext "><br>
+                                急诊：打印卡纸
+                                <br><br>
+                                找医生  28888888<br><br>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemimg ms_mar_l25">10:30</div>
+                        <div class="ms_itembox ms_pad_l90">
+                            <div class="ms_itemtext">
+                                上面服务人员：马振邦
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemimg ms_mar_l25">10:30</div>
+                        <div class="ms_itembox ms_pad_l90">
+                            <div class="ms_itemtext ms_itemtext_l">
+
+                                急诊：打印卡纸急诊：打印卡纸急诊：打印卡纸急诊：打印卡纸
+                                <br>
+                                找医生  28888888
+                            </div>
+                            <div class="ms_itemtext_r">
+                                <img src="images/orderflow/clock.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemimg ms_mar_l25">10:30</div>
+                        <div class="ms_itembox ms_pad_l90">
+                            <div class="ms_itemtext "><br>
+                                故障原因：定影器问题
+                                <br><br>
+                                解决方法：更换新的定影器。问题解决<br><br>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemimg ms_mar_l25">12:11</div>
+                        <div class="ms_itembox ms_pad_l90">
+                            <div class="ms_itemtext3 ms_ol2">
+                                <img src="images/repair/ms_dyj.jpg" class="ms_img">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 模拟一个消息框，给下面的消息框设定高度 -->
+        <div class="ms_simulation">
+            <span id="ms_sim"></span>
+        </div>
+    </section>
+    <div class="ms_content02 " style="display: table;height: auto;padding: 0">
+        <div class="ms_sendbox">
+            <img src="images/orderflow/photograph.png">
+            <img src="images/orderflow/wifi.png">
+            <div class="ms_inputbar">
+                <textarea id="ms_send" onkeyup="textheight()"></textarea>
+                <div class="ms_sendbtn">
+                    <a href="#" style="">发送</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/dropload.min.js"></script>
+<script>
+$(function(){
+    // dropload 插件
+    var dropload = $('.inner').dropload({
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropload-refresh"><i class="iconfont">&#xe613;</i>   下拉刷新</div>',
+            domUpdate  : '<div class="dropload-update"><i class="iconfont">&#xe613;</i>   释放更新</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh"><i class="iconfont">&#xe614;</i>   上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+            domNoData  : '<div class="dropload-noData">暂无数据</div>'
+        },
+
+        //下拉刷洗
+        loadUpFn : function(me){
+            //setTimeout测试用，可删除，实际环境用下面的ajax
+            setTimeout(function(){
+                dropload.resetload();
+            },1000);
+
+
+            /*$.ajax({
+                type: 'GET',
+                url: 'json/update.json',
+                dataType: 'json',
+                success: function(data){
+                    var result = '';
+                    for(var i = 0; i < data.lists.length; i++){
+                        result +=   '';
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.lists').html(result);
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    //alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    dropload.resetload();
+                }
+            });*/
+        },
+
+        //上拉加载
+        loadDownFn : function(me){
+            //setTimeout测试用，可删除，实际环境用下面的ajax
+            var result = '<li>';
+                result +="<div class='ms_itemimg ms_mar_l25'>12:11</div>"
+                result += "<div class='ms_itembox ms_pad_l90'>"
+                       +"<div class='ms_itemtext3 ms_ol2'>"
+                       +"<img src='images/repair/ms_dyj.jpg' class='ms_img'></div></div>"
+                result += "</li>"
+            setTimeout(function(){
+                $('.ms_itemul').append(result);
+                dropload.resetload();
+            },1000);
+            /*$.ajax({
+                type: 'GET',
+                url: 'json/more.json',
+                dataType: 'json',
+                success: function(data){
+                    var result = '';
+                    for(var i = 0; i < data.lists.length; i++){
+                        result +=   '';
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.lists').append(result);
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    ///alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    dropload.resetload();
+                }
+            });*/
+        }
+    });
+});
+
+
+function textheight(){
+
+            var main= $("#ms_send")
+            var mn = $("#ms_sim")
+             var content = main.val().split("\n");
+            mn.text(content)
+            var h = mn.height()
+            var lh = mn.css("line-height").split("px")[0]
+            var hs = h/lh
+            console.dir(hs)
+            if(hs >= 2){
+                main.css({
+                    "line-height":"18px"
+                })
+            }else{
+                main.css({
+                    "line-height":"28px"
+                })
+            }
+            if(h <90){
+                $(".ms_inputbar").height(h+4)
+                $("#ms_send").height(h+2)
+                $(".ms_sendbox").height(h+4)
+                $(".ms_content02").height(h+4)
+            }
+        }
+</script>
+</body>
+</html>

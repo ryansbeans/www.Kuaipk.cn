@@ -1,0 +1,45 @@
+/* Responsive CSS Styles Table of Contents */
+
+@media only screen and (min-width: 1000px) and (max-width: 1169px){
+	.ms_table th { 
+		padding:2px 5px;
+		border-top: 1px solid #a7aaab;
+		border-bottom: 1px solid #a7aaab;
+		background-color: rgba(255,255,255,0.8);
+		line-height: 20px;
+		color: #323232;
+		vertical-align: middle;
+	}
+	.ms_table th, .ms_table td { 
+		height: 36px;
+	}
+	.ms_table td { 
+		padding:2px 5px;
+		line-height: 20px;
+		background-color: rgba(255,255,255,0.8);
+		border-bottom: 1px solid #a7aaab;
+		word-wrap: break-word;
+		word-break: break-all;
+		color: #323232;
+		vertical-align: middle;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px){
+	.ms_table th, .ms_table td { 
+		height: 34px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+	.ms_table th, .ms_table td { 
+		height: 32px;
+	}
+}
+
+
+@media only screen and (max-width: 479px){
+	.ms_table th, .ms_table td { 
+		height: 28px;
+	}
+}

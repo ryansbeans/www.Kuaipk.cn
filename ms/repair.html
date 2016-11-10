@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>填写维修记录</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header class="ms_header">
+        <a href="javascript:history.back();" class="ms_ico_l"><i class="iconfont">&#xe601;</i></a>
+        <h3>填写维修记录</h3>
+    </header>
+    <section class="ms_body ms_bg_c02" style="bottom: 0">
+        <div class="ms_content03">
+            <div class="ms_circle">
+                <img src="images/ms_circle.png">
+            </div>
+            <div class="ms_surbox">
+                <div class="ms_before"></div>
+                <ul class="ms_itemul">
+                    <li>
+                        <div class="ms_itemtitle">报修信息</div>
+                        <div class="ms_itembox2">
+                            <div class="ms_itemtext2 ">
+                                <p>龙岗社康</p>
+                                <p>故障：打印机卡纸</p>
+                                <p>联系人：找医生 电话：82911111</p>
+                                <p>登记：2016-6-1</p>
+                                <p>登记：2016-6-1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemtitle">任务分配</div>
+                        <div class="ms_itembox2">
+                            <div class="ms_itemtext2">
+                                <p>工程师：马正邦</p>
+                                <p>联系人：找医生 电话：82911111</p>
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemtitle">我已到位</div>
+                        <div class="ms_itembox2">
+                            <div class="ms_itemtext2 oneline">
+                                <p>2016-6-1  11:30  到达服务位置</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemtitle">故障原因</div>
+                        <div class="ms_itembox2">
+                            <div class="ms_itemtext2">
+                                <p>定影器问题</p>
+                                <p class="imgbox">
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemtitle">解决方案</div>
+                        <div class="ms_itembox2">
+                            <div class="ms_itemtext2">
+                                <p>更换定影器</p>
+                                <p class="imgbox">
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                    <span>
+                                        <img src="images/ms_photo.png">
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ms_itemtitle">确认</div>
+                        <div class="ms_itembox2">
+                            <a href="" class="ms_itemtext2 submit">
+                                确认
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+
+
+    //修改左侧黑条高度，以及右侧距离顶部高度
+    var beforeTop = function(){
+        var temp = ($(".ms_itemtext2").outerHeight() - 4)/16
+        var top = temp.toFixed(0) * 5 ;
+        var martop = -1 * top;
+        $(".ms_before").css({
+            "top": top+"px"
+        })
+        $(".ms_surbox").css({
+            "margin-top": martop + "px"
+        })
+    }
+    beforeTop()
+    </script>
+
+
+</body></html>

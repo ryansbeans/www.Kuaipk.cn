@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>订单流程</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/dropload.css">
+    <style type="text/css">
+    	section a{
+    		display: block;
+    		width: 80%;
+    		margin: 10px auto;
+    		border-radius: 5px;
+    		background: rgba(0,0,0,0.3);
+    		padding: 8px 5px;
+    		color: #fff;
+    	}
+        .btnhover:hover{
+            background: #1ad;
+        }
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        input[type=range]::-ms-track {
+            height: 25px;
+            border-radius: 10px;
+            box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+            border-color: transparent; /*去除原有边框*/
+            color: transparent; /*去除轨道内的竖线*/
+        }
+
+        input[type=range]::-ms-thumb {
+            border: solid 0.125em rgba(205, 224, 230, 0.5);
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background: #ffffff;
+            margin-top: -5px;
+            box-shadow: 0 .125em .125em #3b4547;
+        }
+
+        input[type=range]::-ms-fill-lower {
+            /*进度条已填充的部分*/
+            height: 22px;
+            border-radius: 10px;
+            background: linear-gradient(to right, #059CFA, white 100%, white);
+        }
+
+        input[type=range]::-ms-fill-upper {
+            /*进度条未填充的部分*/
+            height: 22px;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        input[type=range]:focus::-ms-fill-lower {
+            background: linear-gradient(to right, #059CFA, white 100%, white);
+        }
+
+        input[type=range]:focus::-ms-fill-upper {
+            background: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header class="ms_header">
+        <a href="javascript:void(0)" class="ms_ico_l"><i class="iconfont">&#xe601;</i></a>
+        <h3>订单流程</h3>
+    </header>
+    <div class="ms_bg_c01 ms_bgbase"></div>
+    <section class="ms_body inner" style="bottom: 0;">
+        
+    	<button class="btnhover choice_transparent">我是button 1</button>
+        <button class="btnhover choice_red">我是button 2</button>
+        <input type="range">
+    </section>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script>
+        /*var t
+        $(".btnhover").hover(
+            function(){
+                t = setTimeout(function(){
+                    $(this).show().siblings().hide()
+                },
+                200);
+            },
+            function(){
+                clearTimeout(t);   
+                $(".btnhover").show()
+            }
+        )*/
+    </script>
+</body>

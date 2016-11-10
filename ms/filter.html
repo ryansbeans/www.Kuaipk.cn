@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>订单流程</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/mobiscroll.custom-3.0.0-beta6.min.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+
+    <header class="ms_header">
+        <a href="javascript:history.back();" class="ms_ico_l"><i class="iconfont">&#xe601;</i></a>
+        <h3>筛选条件</h3>
+    </header>
+    <div class="ms_bg_c02 ms_bgbase"></div>
+    <section class="ms_body ms_bt0 inner">
+        <div class="ms_content01">
+            <div class="ms_selectbox">
+                <div class="ms_selectitem3">
+                    <input id="demo1" type="text" placeholder="年/月/日" />
+                </div>
+                <div class="ms_selectitem3">
+                    <input id="demo2" type="text" placeholder="时/分" />
+                </div>
+                <div class="ms_selectitem3">
+                    <input id="demo3" type="text" placeholder="最大/最小" />
+                </div>
+            </div>
+
+            <div class="ms_selectbox">
+                <div class="ms_selectitem3">
+                    <select name="City" id="demo4">
+                        <option value="" disabled selected style='display:none;'>订单状态</option>
+                        <option value="data1">状态1</option>
+                        <option value="data2">状态2</option>
+                        <option value="data3">状态3</option>
+                    </select>
+                </div>
+                <div class="ms_selectitem3">
+                    <select id="demo5">
+                        <optgroup label="分组一">
+                            <option value="1">Atlanta</option>
+                            <option value="2">Boston</option>
+                            <option value="3">Chicago</option>
+                        </optgroup>
+                        <optgroup label="分组二">
+                            <option value="7">Bath</option>
+                            <option value="8">Bristol</option>
+                            <option value="9">Cambridge</option>
+                        </optgroup>
+                        <optgroup label="分组三">
+                            <option value="15">Beijing</option>
+                            <option value="16">Chongqing</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="ms_selectitem3">
+                    <select name="Category" id="demo6" multiple>
+                        <option value="1">多选1</option>
+                        <option value="2">多选2</option>
+                        <option value="3" selected>多选3</option>
+                        <option value="4" selected>多选4</option>
+                        <option value="5">多选5</option>
+                        <option value="6">多选6</option>
+                        <option value="7">多选7</option>
+                        <option value="8">多选8</option>
+                        <option value="9">多选9</option>
+                    </select>
+                </div>
+            </div>
+
+            
+
+            <div class="ms_selectbox">
+                <div class="ms_selectitem3">
+                    <span>开始</span>
+                    <input id="startDate" type="text" placeholder="开始时间" readonly/>
+                </div>
+                <div class="ms_selectitem3">
+                    <span>结束</span>
+                    <input id="endDate" type="text" placeholder="结束时间" readonly/>
+                    <div id="demo8"></div>
+                </div>
+                <div class="ms_selectitem3">
+                    <span>结束</span>
+                    <button>提交</button>
+                </div>
+            </div>
+
+            <div class="ms_selectbox">
+                <div class="ms_selectitem6">
+                    <input  type="text" placeholder="搜索框" />
+                </div>
+                
+                <div class="ms_selectitem3">
+                    <button>提交</button>
+                </div>
+            </div>
+           
+        </div>
+        
+    </section>
+    
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/mobiscroll.custom-3.0.0-beta6.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //  demo1  年月日
+    var now = new Date(),
+        //当前日期
+        max = new Date(now.getFullYear() + 100, now.getMonth(), now.getDate());
+    var instance = mobiscroll.date('#demo1', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        max: max
+    });
+
+
+    //  demo2  时分
+    var instance = mobiscroll.time('#demo2', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        headerText: false,
+    });
+
+
+    //  demo3 最小、最大日期
+    //  var now = new Date(), 
+        //最小日期 - 当前年份减去 110年 0月 1日
+        minDate = new Date(now.getFullYear() - 110, 0, 1),
+        //最大日期 - 当前年份减去 18年 1月 31日
+        maxDate = new Date(now.getFullYear() - 18, 1, 31);
+    var instance = mobiscroll.date('#demo3', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        min: minDate,
+        max: maxDate
+    });
+
+
+    //  demo4  单选
+    var instance = mobiscroll.select('#demo4', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+    });
+
+
+    //  demo5  单选，分组
+    var instance = mobiscroll.select('#demo5', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        label: 'City',
+        group: true,
+        groupLabel: 'Country',
+        width: [100, 170]
+    });
+
+
+    //  demo6  多选，分组
+    var instance = mobiscroll.select('#demo6', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        minWidth: 200
+    });
+    
+    
+    //  demo7  
+    var instance = mobiscroll.range('#demo7', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        controls: ['time'],
+        maxWidth: 100
+    });
+
+    //  demo8  开始，结束 时间
+    mobiscroll.range('#demo8', {
+        theme: 'mobiscroll',
+        lang: 'zh',
+        display: 'bottom',
+        startInput: '#startDate',
+        endInput: '#endDate'
+    });
+</script>
+</body>
+</html>

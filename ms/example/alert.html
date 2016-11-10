@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>alert</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style type="text/css">
+        .ms_tablebox01{
+            margin: 10px auto;
+        }
+        pre{
+            padding: 5px;
+            border: 1px solid #8a8a8a;
+            border-radius: 5px;
+            background: #ececec;
+            color: #555;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="ms_header">
+        <a href="javascript:void(0)" class="ms_ico_l"><i class="iconfont">&#xe601;</i></a>
+        <h3>弹出</h3>
+    </header>
+    <section class="ms_body ms_bg_c02">
+        <div class="ms_content01">
+            <div class="ms_tablebox01">
+                <button onclick="msload.load(true)">loading</button>
+                <button onclick="msload.success(true)">success</button>
+                <button onclick="msload.error(true)">error</button>
+                <button onclick="msload.warning(true)">warning</button>
+                <button onclick="msload.empty()">清空</button>
+            </div>
+            <div class="ms_tablebox01">
+                <h3>关闭loading</h3>
+                <pre>msload.load(false)</pre>
+                <button onclick="msload.load(false)">close</button>
+            </div>
+        </div>
+      
+        <div class="ms_content02 fixed">
+            
+        </div>
+
+       
+        
+    </section>
+    <script src="../js/jquery-1.8.2.min.js"></script>
+    <script src="../js/base.js"></script>
+    
+
+
+</body></html>
